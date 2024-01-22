@@ -1,6 +1,7 @@
 // MovieDetails.js
 import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 const MovieDetails = () => {
     const location = useLocation();
@@ -17,7 +18,7 @@ const MovieDetails = () => {
     }
 
     return (
-        <div>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
             {/* Embed the trailer using an iframe */}
             <iframe
                 title="Trailer"
@@ -27,6 +28,25 @@ const MovieDetails = () => {
                 frameBorder="0"
                 allowFullScreen
             ></iframe>
+            {/* "Go Back Home" button */}
+            <Link
+                to="/"
+                style={{
+                    display: 'inline-block',
+                    padding: '10px 20px',
+                    marginTop: '10px',
+                    fontSize: '16px',
+                    fontWeight: 'bold',
+                    color: '#fff',
+                    backgroundColor: '#007bff',
+                    border: 'none',
+                    borderRadius: '5px',
+                    textDecoration: 'none',
+                    cursor: 'pointer',
+                }}
+            >
+                Go Back Home
+            </Link>
         </div>
     );
 };
